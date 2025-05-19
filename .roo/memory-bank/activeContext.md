@@ -2,92 +2,93 @@
 
 ## Current Focus
 
-The current focus is on reorganizing the project structure to follow software engineering best practices. This involves:
+The current focus is on improving the model download process and documentation. This involves:
 
-1. Establishing a clear directory structure
-2. Implementing proper module organization
-3. Setting up configuration management
-4. Creating standardized entry points
-5. Updating Docker configuration
-6. Ensuring comprehensive documentation
+1. Setting up separate download scripts for different models
+2. Supporting both traditional venv and modern uv environments
+3. Providing clear documentation for model download requirements
+4. Updating the Memory Bank to reflect current project state
+5. Ensuring proper directory structure for downloaded models
+6. Maintaining comprehensive documentation
 
 ## Recent Changes
 
-The project has undergone significant restructuring:
+The project has undergone significant updates:
 
-1. **Directory Reorganization**
-   - Created modular `src` directory with subdirectories for components
-   - Established proper test organization
-   - Set up documentation directory
-   - Created configuration system
+1. **Model Download Improvements**
+   - Created separate script for downloading Llama 3 from Hugging Face
+   - Created script for downloading LCM-7B directly from Meta's GitHub
+   - Updated directory structure for model storage
+   - Added support for uv environment setup
 
-2. **Code Refactoring**
-   - Updated import paths
-   - Created proper package structure with `__init__.py` files
-   - Centralized configuration in `config/settings.py`
-   - Created unified entry point in `run.py`
+2. **Documentation Updates**
+   - Updated README.md with detailed model download instructions
+   - Added information about hardware requirements
+   - Included instructions for both venv and uv environments
+   - Clarified the model licensing requirements
 
-3. **DevOps Updates**
-   - Updated Dockerfile for new structure
-   - Created multi-service docker-compose.yml
-   - Set up data directories for models and logs
+3. **Environment Setup**
+   - Added support for uv-based virtual environments
+   - Maintained backward compatibility with traditional venv
+   - Improved dependency installation documentation
+   - Clarified hardware requirements for model inference
 
-4. **Documentation**
-   - Updated README.md with comprehensive information
-   - Preserved existing documentation in appropriate locations
-   - Created memory bank for project knowledge
+4. **Memory Bank Updates**
+   - Updated activeContext.md to reflect current focus
+   - Updated progress.md to track completed work
+   - Ensured documentation consistency across the project
 
 ## Active Decisions
 
-1. **Module Organization**
-   - Decision to separate code by functionality (API, UI, inference, comparison, utils)
-   - Rationale: Improves maintainability and follows separation of concerns
+1. **Model Selection**
+   - Decision to use Llama 3 8B instead of Llama 2 7B
+   - Rationale: Provides more recent model architecture for comparison
 
-2. **Configuration Approach**
-   - Decision to use centralized settings with environment variable overrides
-   - Rationale: Balances ease of development with deployment flexibility
+2. **LCM Download Approach**
+   - Decision to download LCM directly from Meta's GitHub repository
+   - Rationale: Ensures access to official model weights and implementation
 
-3. **Entry Point Design**
-   - Decision to create a unified `run.py` with command-line arguments
-   - Rationale: Provides flexibility while maintaining simplicity
+3. **Environment Management**
+   - Decision to support both venv and uv for environment setup
+   - Rationale: Provides flexibility while encouraging modern, faster tools
 
-4. **Docker Strategy**
-   - Decision to use multi-service approach in docker-compose
-   - Rationale: Allows independent scaling and deployment of components
+4. **Model Storage Structure**
+   - Decision to store models in separate directories (llama-3-8b and lcm)
+   - Rationale: Maintains clear separation between different model architectures
 
 ## Next Steps
 
-1. **Testing Updates**
-   - Update test imports to match new structure
-   - Ensure all tests pass with new organization
+1. **Model Integration**
+   - Integrate downloaded models with the comparison framework
+   - Update inference code to work with Llama 3 and LCM-7B
 
-2. **Documentation Completion**
-   - Add API documentation
-   - Create developer guide for extending the framework
+2. **UI Updates**
+   - Update UI components to reflect new model capabilities
+   - Add model-specific visualizations and metrics
 
-3. **CI/CD Setup**
-   - Implement continuous integration workflow
-   - Set up automated testing
+3. **Performance Optimization**
+   - Implement model quantization for resource-constrained environments
+   - Add caching mechanisms for improved inference speed
 
-4. **Feature Enhancements**
-   - Implement additional comparison metrics
-   - Add visualization improvements
-   - Support for additional models
+4. **Documentation Expansion**
+   - Create detailed guides for model comparison
+   - Add examples of model strengths and weaknesses
+   - Document hardware optimization strategies
 
 ## Current Challenges
 
-1. **Import Path Management**
-   - Ensuring all imports work correctly with the new structure
-   - Solution: Systematic testing and updates
+1. **Model Access Requirements**
+   - Llama 3 requires Hugging Face account and license acceptance
+   - Solution: Clear documentation and authentication guidance
 
-2. **Configuration Standardization**
-   - Moving from hardcoded values to configuration system
-   - Solution: Gradual migration with backward compatibility
+2. **Hardware Requirements**
+   - LCM-7B and Llama 3 8B require significant GPU memory
+   - Solution: Document requirements and provide CPU fallback options
 
-3. **Docker Optimization**
-   - Optimizing container size and build time
-   - Solution: Multi-stage builds and careful dependency management
+3. **GitHub Repository Dependencies**
+   - LCM download depends on Meta's GitHub repositories
+   - Solution: Robust error handling and clear troubleshooting guides
 
-4. **Documentation Consistency**
-   - Maintaining consistent documentation across the project
-   - Solution: Centralized documentation standards and regular reviews
+4. **Environment Compatibility**
+   - Supporting both traditional and modern Python environments
+   - Solution: Comprehensive documentation for multiple setup approaches

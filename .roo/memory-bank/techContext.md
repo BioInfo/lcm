@@ -21,21 +21,24 @@
 
 ### Models
 - **LCM-7B**: Meta's Large Concept Model (7B parameters)
-- **Llama-7B**: Meta's Llama 2 model (7B parameters)
+- **Llama-3-8B**: Meta's Llama 3 model (8B parameters)
 
 ## Development Environment
 
 ### Requirements
-- Python 3.9+ with venv or conda
+- Python 3.9+ with venv, uv, or conda
 - CUDA-compatible GPU (recommended)
 - Docker and Docker Compose (for containerized deployment)
 - Git
+- Hugging Face account (for Llama 3 model access)
 
 ### Setup Process
 1. Clone repository
-2. Create virtual environment
+2. Create virtual environment (using venv or uv)
 3. Install dependencies
-4. Download models
+4. Download models:
+   - Llama 3 from Hugging Face (requires license acceptance)
+   - LCM-7B from Meta's GitHub repository
 5. Run application
 
 ## Technical Constraints
@@ -76,11 +79,14 @@
 ## Integration Points
 
 ### External APIs
-- Hugging Face Hub for model downloading
+- Hugging Face Hub for Llama 3 model downloading
+- Meta's GitHub repositories for LCM model downloading
 - Optional: Monitoring services (Prometheus, etc.)
 
 ### File System
-- Model storage in data/models directory
+- Model storage in models directory:
+  - Llama 3: models/llama-3-8b
+  - LCM: models/lcm
 - Logs in data/logs directory
 - Configuration in config directory
 
