@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - model_data:/app/data/models
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - MODEL_PATH=/app/data/models
+      - LOG_LEVEL=INFO
+    command: python run.py --api
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  ui:
+    build: .
+    ports:
+      - "8050:8050"
+    volumes:
+      - .:/app
+    environment:
+      - API_URL=http://api:8000
+    command: python run.py --ui
+    depends_on:
+      - api
+
+  comparison_ui:
+    build: .
+    ports:
+      - "8060:8060"
+    volumes:
+      - .:/app
+    environment:
+      - API_URL=http://api:8000
+    command: python run.py --ui --comparison
+    depends_on:
+      - api
+
+volumes:
+  model_data:

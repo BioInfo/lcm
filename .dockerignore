@@ -1,0 +1,186 @@
+# Version control
+.git
+.gitignore
+.github
+.gitattributes
+
+# Docker
+.dockerignore
+docker-compose*.yml
+Dockerfile*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+cython_debug/
+
+# Virtual Environment
+venv/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-workspace
+*.sublime-project
+.netbeans/
+nbproject/
+.eclipse/
+.ipynb_checkpoints/
+
+# Testing
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+.tox/
+nosetests.xml
+test-output/
+test-results/
+
+# Documentation
+docs/
+site/
+mkdocs/
+sphinx-docs/
+*.md
+!README.md
+
+# Memory Bank
+.roo/
+
+# Data
+data/models/*
+!data/models/.gitkeep
+data/logs/*
+!data/logs/.gitkeep
+
+# Model files (potentially large)
+*.pt
+*.pth
+*.onnx
+*.bin
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+*.model
+*.weights
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Logs
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Profiling data
+*.prof
+profile_results/
+
+# Local development settings
+.env.local
+.env.development
+.env.test
+.env.production
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Credentials
+credentials.json
+*_credentials.json
+*_key.json
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Build artifacts
+node_modules/
+bower_components/
+jspm_packages/
+.grunt/
+.npm/
+.eslintcache/
+.stylelintcache/
+.yarn/
+.pnp.*
+
+# Misc
+.editorconfig
+.gitkeep
+LICENSE
+CHANGELOG.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
